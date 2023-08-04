@@ -1,18 +1,18 @@
 /**
- * @ 백준 2501
- * https://www.acmicpc.net/problem/2501
+ * @ 백준 3460
+ * https://www.acmicpc.net/problem/3460
  */
 
 let fs = require('fs')
-let input = fs.readFileSync('./input.txt').toString().split(' ');
+let input = fs.readFileSync('./input.txt').toString().split('\n').map(Number);
 
-let arr = [];
-const [N, K] = [...input];
-
-for (let i = 1; i < N; i++) {
-  if (N % i === 0) {
-    arr.push(i)
-  }
+let testCase = input[0];
+let binary;
+for (let i = 1; i <= testCase; i++) {
+  binary = input[i].toString(2);
 }
 
-console.log(arr[K - 1] ? arr[K - 1] : 0);
+const binaryArr = [...binary].find((v, i) => { v === 1 })
+
+console.log(binaryArr);
+
